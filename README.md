@@ -22,4 +22,4 @@ Example:
     </system>
 </config>
 ```
-
+![Example](https://i.imgur.com/WTmJE00.png "Logo Title Text 1")
