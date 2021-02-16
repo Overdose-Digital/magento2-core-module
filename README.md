@@ -23,3 +23,15 @@ Example:
 </config>
 ```
 ![Example](https://i.imgur.com/WTmJE00.png "Logo Title Text 1")
+
+## Functionality
+
+### Check/Money Order allowed IPs
+In order to use CMO in test purposes when it's disabled
+### Usage
+Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field
+Appears if CMO status NO. Listed client IPs would see CMO on checkout.
+
+## [1.1.0] - 17-02-2021
+### Changed
+-- Added availability to use Check/Money Order payment by given client IP if it's disabled
