@@ -3,7 +3,7 @@
 namespace Overdose\Core\Model\Config;
 
 use Magento\Config\Model\Config\CommentInterface;
-use Magento\Framework\HTTP\PhpEnvironment\Request;
+use Overdose\Core\Helper\ClientIpHelper;
 
 /**
  * Class ClientIp
@@ -11,17 +11,17 @@ use Magento\Framework\HTTP\PhpEnvironment\Request;
 class ClientIp implements CommentInterface
 {
     /**
-     * @var Request
+     * @var ClientIpHelper
      */
-    private $http;
+    protected $clientIpHelper;
 
     /**
      * ClientIp constructor.
-     * @param Request $http
+     * @param ClientIpHelper $clientIpHelper
      */
-    public function __construct(Request $http)
+    public function __construct(ClientIpHelper $clientIpHelper)
     {
-        $this->http = $http;
+        $this->clientIpHelper = $clientIpHelper;
     }
 
     /**
@@ -31,14 +31,8 @@ class ClientIp implements CommentInterface
     public function getCommentText($elementValue)
     {
         return __('Comma separated client IP addresses that are allowed to use the Check/Money Order payment method.')
-         . __(' Your current IP: ') . '<strong>' . $this->getClientIp() . '</strong>';
+         . __(' Your current IP: ') . '<strong>' . $this->clientIpHelper->getClientIp() . '</strong>';
     }
 
-    /**
-     * @return string
-     */
-    public function getClientIp()
-    {
-        return $this->http->getClientIp();
-    }
+
 }

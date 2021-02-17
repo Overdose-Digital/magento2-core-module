@@ -3,42 +3,31 @@
 namespace Overdose\Core\Plugin\Payment\Method;
 
 use Magento\OfflinePayments\Model\Checkmo;
-use Magento\Framework\App\Config\ScopeConfigInterface;
-use Overdose\Core\Model\Config\ClientIp;
+use Overdose\Core\Helper\ClientIpHelper;
 
 /**
  * Class CheckmoPlugin
  */
 class CheckmoPlugin
 {
+    /**
+     * @var string
+     */
     const XML_PATH_ALLOWED_IPS = 'payment/checkmo/allowed_ips';
 
     /**
-     * @var ClientIp
+     * @var ClientIpHelper
      */
-    private $clientIp;
-
-    /**
-     * @var ScopeConfigInterface
-     */
-    private $scopeConfig;
-
-    /**
-     * @var AdminSession
-     */
-    private $adminSession;
+    private $clientIpHelper;
 
     /**
      * CheckmoPlugin constructor.
-     * @param ScopeConfigInterface $scopeConfig
-     * @param ClientIp $clientIp
+     * @param ClientIpHelper $clientIpHelper
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig,
-        ClientIp $clientIp
+        ClientIpHelper $clientIpHelper
     ) {
-        $this->scopeConfig = $scopeConfig;
-        $this->clientIp = $clientIp;
+        $this->clientIpHelper = $clientIpHelper;
     }
 
     /**
@@ -51,10 +40,10 @@ class CheckmoPlugin
     public function afterIsActive(Checkmo $subject, $result)
     {
         if (!$result) {
-            $clientIp = $this->clientIp->getClientIp();
+            $clientIp = $this->clientIpHelper->getClientIp();
 
             $allowedIps = explode(',',
-                $this->scopeConfig->getValue(
+                $this->clientIpHelper->scopeConfig->getValue(
                 self::XML_PATH_ALLOWED_IPS,
                 \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES
                 )
