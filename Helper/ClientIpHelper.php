@@ -52,7 +52,7 @@ class ClientIpHelper extends AbstractHelper
      */
     public function getAllowedIps()
     {
-        $IPsConfig = $this->scopeConfig->getValue(self::XML_PATH_ALLOWED_IPS, \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES)
+        $IPsConfig = $this->scopeConfig->getValue(self::XML_PATH_ALLOWED_IPS, \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES);
         return array_map('trim', explode(',', $IPsConfig));
     }
 }
