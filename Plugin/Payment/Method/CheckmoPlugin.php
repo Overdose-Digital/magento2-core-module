@@ -11,11 +11,6 @@ use Overdose\Core\Helper\ClientIpHelper;
 class CheckmoPlugin
 {
     /**
-     * @var string
-     */
-    const XML_PATH_ALLOWED_IPS = 'payment/checkmo/allowed_ips';
-
-    /**
      * @var ClientIpHelper
      */
     private $clientIpHelper;
@@ -42,12 +37,7 @@ class CheckmoPlugin
         if (!$result) {
             $clientIp = $this->clientIpHelper->getClientIp();
 
-            $allowedIps = explode(',',
-                $this->clientIpHelper->scopeConfig->getValue(
-                self::XML_PATH_ALLOWED_IPS,
-                \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES
-                )
-            );
+            $allowedIps = $this->clientIpHelper->getAllowedIps();
 
             if (in_array($clientIp, $allowedIps)) {
                 $result = true;

@@ -28,7 +28,11 @@ Example:
 
 ### Check/Money Order allowed IPs
 In order to use CMO in test purposes when it's disabled
-### Usage
-Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field
-Appears if CMO status NO. Listed client IPs would see CMO on checkout.
+
+**Usage**  
+App your IP on production and "Check money order" will be available for you on. For testing orders.
+
+## Configurations
+
+- `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field.
 

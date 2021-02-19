@@ -11,6 +11,11 @@ use Magento\Framework\HTTP\PhpEnvironment\Request;
 class ClientIpHelper extends AbstractHelper
 {
     /**
+     * @var string
+     */
+    const XML_PATH_ALLOWED_IPS = 'payment/checkmo/allowed_ips';
+
+    /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
      */
     public $scopeConfig;
@@ -26,8 +31,8 @@ class ClientIpHelper extends AbstractHelper
      * @param Context $context
      */
     public function __construct(
-        Request $http,
-        Context $context
+        Context $context,
+        Request $http
     ) {
         $this->http = $http;
 
@@ -40,5 +45,14 @@ class ClientIpHelper extends AbstractHelper
     public function getClientIp()
     {
         return $this->http->getClientIp();
+    }
+
+    /**
+     * @return array
+     */
+    public function getAllowedIps()
+    {
+        $IPsConfig = $this->scopeConfig->getValue(self::XML_PATH_ALLOWED_IPS, \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES)
+        return array_map('trim', explode(',', $IPsConfig));
     }
 }
