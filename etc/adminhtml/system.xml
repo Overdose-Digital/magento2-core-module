@@ -4,5 +4,16 @@
         <tab id="od_core" sortOrder="110">
             <label>Overdose</label>
         </tab>
+        <section id="payment">
+            <group id="checkmo">
+                <field id="allowed_ips" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable payment for IPs</label>
+                    <comment model="Overdose\Core\Model\Config\ClientIp"/>
+                    <depends>
+                        <field id="*/*/active">0</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
     </system>
 </config>

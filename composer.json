@@ -1,11 +1,11 @@
 {
     "name": "overdose/module-core",
-    "version": "1.0.0",
-    "description": "N/A",
+    "description": "Core module for other OD modules",
     "type": "magento2-module",
     "require": {
         "magento/framework": "*"
     },
+    "version": "1.1.0",
     "license": [
         "Proprietary"
     ],
