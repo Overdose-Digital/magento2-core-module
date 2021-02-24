@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\OfflinePayments\Model\Checkmo">
+        <plugin name="od_core_checkmo_plugin" type="Overdose\Core\Plugin\Payment\Method\CheckmoPlugin"/>
+    </type>
+    <type name="Magento\Csp\Model\Collector\CspWhitelistXmlCollector">
+        <plugin name="od_csp_whitelist_collector" type="Overdose\Core\Plugin\Csp\Model\Collector\CspWhitelistXmlCollectorPlugin"/>
+    </type>
+</config>
