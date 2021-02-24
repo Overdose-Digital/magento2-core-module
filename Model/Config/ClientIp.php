@@ -33,6 +33,4 @@ class ClientIp implements CommentInterface
         return __('Comma separated client IP addresses that are allowed to use the Check/Money Order payment method.')
          . __(' Your current IP: ') . '<strong>' . $this->clientIpHelper->getClientIp() . '</strong>';
     }
-
-
 }

@@ -23,3 +23,24 @@ Example:
 </config>
 ```
 ![Example](https://i.imgur.com/WTmJE00.png "Logo Title Text 1")
+
+## Functionality
+
+### Check/Money Order allowed IPs
+In order to use CMO in test purposes when it's disabled
+
+**Usage**  
+App your IP on production and "Check money order" will be available for you on. For testing orders.
+
+
+### Content Security Policy Management
+####Purpose: To cover W3C CSP recommendation 
+In order to add some sources to Content-Security-Policy / Content-Security-Policy-Report-Only header:
+ - `Stores > Settings > Configuration > Security > Content Security Policy > Custom CSP` section.
+ - `Source Url` field : to add URL, comma separated if same directives will be using for few sources.
+ - `Directives` field : multiselect for pick up proper restriction directives per URL
+
+## Configurations
+
+- `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field.
+

@@ -15,7 +15,6 @@
                 </field>
             </group>
         </section>
-
         <section id="od_csp" type="text" translate="label" sortOrder="500" showInDefault="1" showInWebsite="0" showInStore="1">
             <class>separator-top</class>
             <label>Content Security Policy</label>
@@ -33,6 +32,5 @@
                 </field>
             </group>
         </section>
-
     </system>
 </config>
