@@ -34,7 +34,7 @@ App your IP on production and "Check money order" will be available for you on. 
 
 
 ### Content Security Policy Management
-####Purpose: To cover W3C CSP recommendation 
+**Purpose: To cover W3C CSP recommendation**  
 In order to add some sources to Content-Security-Policy / Content-Security-Policy-Report-Only header:
  - `Stores > Settings > Configuration > Security > Content Security Policy > Custom CSP` section.
  - `Source Url` field : to add URL, comma separated if same directives will be using for few sources.
