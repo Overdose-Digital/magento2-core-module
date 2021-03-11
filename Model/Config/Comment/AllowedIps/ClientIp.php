@@ -1,6 +1,6 @@
 <?php
 
-namespace Overdose\Core\Model\Config;
+namespace Overdose\Core\Model\Config\Comment\AllowedIps;
 
 use Magento\Config\Model\Config\CommentInterface;
 use Overdose\Core\Helper\ClientIpHelper;
@@ -34,3 +34,4 @@ class ClientIp implements CommentInterface
          . __(' Your current IP: ') . '<strong>' . $this->clientIpHelper->getClientIp() . '</strong>';
     }
 }
+
