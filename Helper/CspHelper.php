@@ -41,23 +41,19 @@ class CspHelper extends AbstractHelper
      */
     public function getCspSources()
     {
-        return $this->toArray($this->getConfig());
+        $options = $this->getConfigRules();
+        if ($options) {
+            return $this->json->unserialize($options);
+        } else {
+            return [];
+        }
     }
 
     /**
      * @return mixed
      */
-    private function getConfig()
+    private function getConfigRules()
     {
         return $this->scopeConfig->getValue(self::XML_PATH_SOURCES, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-    }
-
-    /**
-     * @param $json
-     * @return array
-     */
-    private function toArray($json)
-    {
-        return $this->json->unserialize($this->getConfig());
     }
 }
