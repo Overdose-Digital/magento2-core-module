@@ -31,7 +31,7 @@ class Rules extends AbstractFieldArray
                 'label' => __('Directives'),
                 'renderer' => $this->getDirectivesRenderer(),
                 'extra_params' => 'multiple="multiple"'
-            ],
+            ]
         );
 
         $this->_addAfter = false;
