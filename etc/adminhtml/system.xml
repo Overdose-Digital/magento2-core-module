@@ -4,13 +4,13 @@
         <tab id="od_core" translate="label" sortOrder="10">
             <label>Overdose</label>
         </tab>
-        <section id="general_config" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="od_general_config" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
             <resource>Overdose_Core::config</resource>
-            <label>General Config</label>
+            <label>General Configs</label>
             <tab>od_core</tab>
             <group id="api_keys" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Api keys</label>
-                <field id="google_maps" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                <field id="google_maps" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label>Google maps</label>
                 </field>
             </group>
