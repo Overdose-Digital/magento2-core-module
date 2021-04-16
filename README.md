@@ -47,4 +47,4 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 
 ## Change log
 
-- v1.0: Check / Money Order - support Magento Cloud
+- v1.3: Check / Money Order - support Magento Cloud
