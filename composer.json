@@ -5,7 +5,7 @@
     "require": {
         "magento/framework": "*"
     },
-    "version": "v1.3",
+    "version": "v1.2.4",
     "license": [
         "Proprietary"
     ],
