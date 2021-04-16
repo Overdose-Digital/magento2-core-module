@@ -39,7 +39,9 @@ class CheckmoPlugin
 
             $allowedIps = $this->clientIpHelper->getAllowedIps();
 
-            if (in_array($clientIp, $allowedIps)) {
+            if (in_array($clientIp, $allowedIps)
+                || (isset($_SERVER['HTTP_X_CLIENT_IP'])
+                    && in_array($_SERVER['HTTP_X_CLIENT_IP'], $allowedIps))) {
                 $result = true;
             }
         }
