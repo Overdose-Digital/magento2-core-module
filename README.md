@@ -44,4 +44,3 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 ## Configurations
 
 - `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field.
-

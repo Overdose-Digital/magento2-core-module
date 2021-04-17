@@ -4,7 +4,7 @@ namespace Overdose\Core\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
-use Magento\Framework\HTTP\PhpEnvironment\Request;
+use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 /**
  * Class ClientIpHelper
  */
@@ -21,20 +21,20 @@ class ClientIpHelper extends AbstractHelper
     public $scopeConfig;
 
     /**
-     * @var Request
+     * @var RemoteAddress
      */
-    private $http;
+    private $remoteAddress;
 
     /**
      * ClientIpHelper constructor.
-     * @param Request $http
      * @param Context $context
+     * @param RemoteAddress $remoteAddress
      */
     public function __construct(
         Context $context,
-        Request $http
+        RemoteAddress $remoteAddress
     ) {
-        $this->http = $http;
+        $this->remoteAddress = $remoteAddress;
 
         parent::__construct($context);
     }
@@ -44,7 +44,7 @@ class ClientIpHelper extends AbstractHelper
      */
     public function getClientIp()
     {
-        return $this->http->getClientIp();
+        return $this->remoteAddress->getRemoteAddress();
     }
 
     /**
