@@ -44,3 +44,7 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 ## Configurations
 
 - `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field.
+
+## Install instructions:
+  1. composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git
+  2. composer require overdose/module-core:1.2.5
