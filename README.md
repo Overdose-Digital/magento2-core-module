@@ -1,4 +1,12 @@
-# Overdose Core module
+# Overdose Core module M2
+Module "for other OD modules".  
+Creates config tab and contain couple geatures.
+
+## Install instructions:
+  - If NOT packegist: `composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git`
+  - Allways: `composer require overdose/module-core:1.2.6` (DISCLAYMER: check version before run this command)
+
+## Functionality
 
 Create tab `od_core` in Configurations. If your module has configurations, than add core module to `require` section and put configurations in `od_core` tab.
 `overdose/module-core`  
@@ -24,8 +32,6 @@ Example:
 ```
 ![Example](https://i.imgur.com/WTmJE00.png "Logo Title Text 1")
 
-## Functionality
-
 ### Check/Money Order allowed IPs
 In order to use CMO in test purposes when it's disabled
 
@@ -43,8 +49,5 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 
 ## Configurations
 
-- `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field.
+- `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field. Default: NZ VPN.
 
-## Install instructions:
-  1. composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git
-  2. composer require overdose/module-core:1.2.5
