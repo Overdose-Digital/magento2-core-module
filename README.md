@@ -3,8 +3,8 @@ Module "for other OD modules".
 Creates config tab and contain couple geatures.
 
 ## Install instructions:
-  - If NOT packegist: `composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git`
-  - Allways: `composer require overdose/module-core:1.2.6` (DISCLAYMER: check version before run this command)
+  - If NOT packagist: `composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git`
+  - Always: `composer require overdose/module-core:1.2.7` (DISCLAYMER: check version before run this command)
 
 ## Functionality
 
