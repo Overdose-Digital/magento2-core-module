@@ -1,0 +1,20 @@
+<!--
+/**
+ * Copyright © Overdose Digital. All rights reserved.
+ * See LICENSE_OVERDOSE.txt for license details.
+ */
+-->
+<!--@subject {{var environment}} - {{trans "Critical Error Report"}} @-->
+<!--@vars {
+"var errorMessage|raw":"Error message",
+"var errorSubject|raw":"What system causes the error"
+} @-->
+
+<table>
+    <tr class="email-information">
+        <td>
+            <p>{{trans "Error during: %errorSubject." errorSubject=$errorSubject}}</p>
+            <p>{{trans "Error message: %errorMessage." errorMessage=$errorMessage}}</p>
+        </td>
+    </tr>
+</table>
