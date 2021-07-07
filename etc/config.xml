@@ -9,7 +9,7 @@
         <admin_notification>
             <email>
                 <identity>general</identity>
-                <template>admin_notification_email_template</template>
+                <template>od_admin_notification_email_template</template>
             </email>
         </admin_notification>
     </default>
