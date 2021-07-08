@@ -39,6 +39,22 @@ In order to use CMO in test purposes when it's disabled
 App your IP on production and "Check money order" will be available for you on. For testing orders.
 
 
+### Admin Notification
+Sometimes tech leads and client need to be updated with critical processes failures.  
+This function allows implementing email notifications send in any part of custom logic.
+
+Admin configuration: Stores > Configuration > Overdose > Admin Notification > Email Notification
+![Admin Notification](https://i.imgur.com/pYsNe4O.png "Admin notification configuration")
+To use module functionality need to add `Overdose\AdminNotification\Model\Email\Sender` class and execute `send()` method.  
+Example:
+
+    $sender->send([
+        'errorSubject' => 'Custom product import failure.',
+        'errorMessage' => 'Error: [message]'
+    ]);
+
+The default email template is `app/code/Overdose/Core/view/frontend/email/admin_notification.html`, it can be modified if needed.
+
 ### Content Security Policy Management
 **Purpose: To cover W3C CSP recommendation**  
 In order to add some sources to Content-Security-Policy / Content-Security-Policy-Report-Only header:
@@ -48,6 +64,10 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `Directives` field : multiselect for pick up proper restriction directives per URL
 
 ## Configurations
-
+- `od_general_config/api_keys/google_maps`. Google Maps API key for global usage.
+- `admin_notification/email/identity`. Admin Notification sender email.
+- `admin_notification/email/template`. Admin Notification email template.
+- `admin_notification/email/receiver`. Admin Notification Receiver email.
 - `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field. Default: NZ VPN.
+- `od_csp/custom_policy/rules`. Custom rules for Magento_CSP.
 

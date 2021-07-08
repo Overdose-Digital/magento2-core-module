@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Overdose Digital. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="od_admin_notification_email_template" label="Admin Notification" file="admin_notification.html"
+              type="html" module="Overdose_Core" area="frontend"/>
+</config>

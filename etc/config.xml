@@ -6,5 +6,11 @@
                 <allowed_ips>103.87.121.19</allowed_ips>
             </checkmo>
         </payment>
+        <admin_notification>
+            <email>
+                <identity>general</identity>
+                <template>od_admin_notification_email_template</template>
+            </email>
+        </admin_notification>
     </default>
 </config>
