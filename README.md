@@ -40,19 +40,20 @@ App your IP on production and "Check money order" will be available for you on. 
 
 
 ### Admin Notification
-Sometimes tech leads and client need to be updated with critical processes failures.
+Sometimes tech leads and client need to be updated with critical processes failures.  
 This function allows implementing email notifications send in any part of custom logic.
 
 Admin configuration: Stores > Configuration > Overdose > Admin Notification > Email Notification
 ![Admin Notification](https://i.imgur.com/pYsNe4O.png "Admin notification configuration")
-To use module functionality need to add Overdose\AdminNotification\Model\Email\Sender class and execute send() method.  Example:
+To use module functionality need to add `Overdose\AdminNotification\Model\Email\Sender` class and execute `send()` method.  
+Example:
 
     $sender->send([
         'errorSubject' => 'Custom product import failure.',
         'errorMessage' => 'Error: [message]'
     ]);
 
-The default email template is app/code/Overdose/Core/view/frontend/email/admin_notification.html, it can be modified if needed.
+The default email template is `app/code/Overdose/Core/view/frontend/email/admin_notification.html`, it can be modified if needed.
 
 ### Content Security Policy Management
 **Purpose: To cover W3C CSP recommendation**  
