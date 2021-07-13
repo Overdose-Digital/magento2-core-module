@@ -6,7 +6,6 @@ namespace Overdose\Core\Block\Adminhtml\Csp\Form\Field;
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\LocalizedException;
-use Overdose\Core\Block\Adminhtml\Csp\Form\Field\Directives;
 
 /**
  * Class Rules
@@ -18,13 +17,21 @@ class Rules extends AbstractFieldArray
      */
     private $directivesRenderer;
 
+protected $textAreaType = null;
+
     /**
      * @inheridoc
      * @throws LocalizedException
      */
     protected function _prepareToRender()
     {
-        $this->addColumn('source', ['label' => __('Source URL'), 'class' => 'required-entry']);
+        $this->addColumn(
+            'source',
+            [
+                'label' => __('Source URL'),
+                'renderer' => $this->textAreaTypes()
+            ]
+        );
         $this->addColumn(
             'directives',
             [
@@ -76,5 +83,21 @@ class Rules extends AbstractFieldArray
         }
 
         return $this->directivesRenderer;
+    }
+
+    /**
+     * @return \Magento\Framework\View\Element\BlockInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
+    private function textAreaTypes()
+    {
+        if (!$this->textAreaType) {
+            $this->textAreaType = $this->getLayout()->createBlock(
+                \Overdose\Core\Block\Adminhtml\Csp\Form\Field\Textarea::class,
+                ''
+            );
+        }
+
+        return $this->textAreaType;
     }
 }
