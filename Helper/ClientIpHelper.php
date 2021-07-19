@@ -5,6 +5,7 @@ namespace Overdose\Core\Helper;
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
+
 /**
  * Class ClientIpHelper
  */
@@ -44,7 +45,18 @@ class ClientIpHelper extends AbstractHelper
      */
     public function getClientIp()
     {
-        return $this->remoteAddress->getRemoteAddress();
+        if (getenv('HTTP_CLIENT_IP')) {
+            $ip = getenv('HTTP_CLIENT_IP');
+        } elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+            $ip = getenv('HTTP_X_FORWARDED_FOR');
+            if (strpos($ip, ',') !== false) {
+                $tmp = explode(',', $ip);
+                $ip = trim($tmp[0]);
+            }
+        } else {
+            $ip = getenv('REMOTE_ADDR');
+        }
+        return $ip;
     }
 
     /**
@@ -52,7 +64,8 @@ class ClientIpHelper extends AbstractHelper
      */
     public function getAllowedIps()
     {
-        $IPsConfig = $this->scopeConfig->getValue(self::XML_PATH_ALLOWED_IPS, \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES);
+        $IPsConfig = $this->scopeConfig->getValue(self::XML_PATH_ALLOWED_IPS,
+            \Magento\Store\Model\ScopeInterface::SCOPE_WEBSITES);
         return array_map('trim', explode(',', $IPsConfig));
     }
 }
