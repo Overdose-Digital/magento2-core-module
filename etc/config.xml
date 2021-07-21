@@ -12,5 +12,14 @@
                 <template>od_admin_notification_email_template</template>
             </email>
         </admin_notification>
+        <csp>
+            <policies>
+                <storefront>
+                    <frame-ancestors>
+                        <inline>0</inline>
+                    </frame-ancestors>
+                </storefront>
+            </policies>
+        </csp>
     </default>
 </config>
