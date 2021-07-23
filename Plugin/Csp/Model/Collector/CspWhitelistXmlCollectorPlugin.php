@@ -32,20 +32,23 @@ class CspWhitelistXmlCollectorPlugin
 
         foreach ($resources as $resource) {
             if (!empty($resource['directives'])) {
+                $sources = explode(',', $resource['source']);
                 foreach ($resource['directives'] as $src) {
-                    $defaultPolicies[] = new FetchPolicy(
-                        $src,
-                        false,
-                        [$resource['source']],
-                        [],
-                        false,
-                        false,
-                        false,
-                        [],
-                        [],
-                        false,
-                        false
-                    );
+                    foreach ($sources as $source) {
+                        $defaultPolicies[] = new FetchPolicy(
+                            $src,
+                            false,
+                            [$source],
+                            [],
+                            false,
+                            false,
+                            false,
+                            [],
+                            [],
+                            false,
+                            false
+                        );
+                    }
                 }
             }
         }
