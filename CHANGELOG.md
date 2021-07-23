@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.9] - 23-08-2021
 ### Fixed
 - Fixed issue with getting ip for checkmo payment method, old function returns some reason 127.0.0.1
+
 ## [1.2.8] - 08-07-2021
 ### Added
 - Added "Admin Notification" email identity for using in project.
