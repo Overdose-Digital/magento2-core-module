@@ -60,7 +60,7 @@ The default email template is `app/code/Overdose/Core/view/frontend/email/admin_
 In order to add some sources to Content-Security-Policy / Content-Security-Policy-Report-Only header:
 
 - `Stores > Settings > Configuration > Security > Content Security Policy > Custom CSP` section.
-- `Source Url` field : to add URL, comma separated if same directives will be using for few sources.
+- `Source Url` field : to add URL, comma separated or from new line if same directives will be using for few sources.
 - `Directives` field : multiselect for pick up proper restriction directives per URL
 
 ## Configurations
