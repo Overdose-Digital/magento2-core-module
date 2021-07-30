@@ -62,6 +62,7 @@
                     <label>Rules</label>
                     <frontend_model>Overdose\Core\Block\Adminhtml\Csp\Form\Field\Rules</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>Please put source values with coma separated or one per line </comment>
                 </field>
             </group>
         </section>

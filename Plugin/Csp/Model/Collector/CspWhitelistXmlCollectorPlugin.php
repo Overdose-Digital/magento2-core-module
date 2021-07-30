@@ -32,7 +32,7 @@ class CspWhitelistXmlCollectorPlugin
 
         foreach ($resources as $resource) {
             if (!empty($resource['directives'])) {
-                $sources = explode(',', $resource['source']);
+                $sources = preg_split('/[\ \n\r\,]+/', $resource['source']);
                 foreach ($resource['directives'] as $src) {
                     foreach ($sources as $source) {
                         $defaultPolicies[] = new FetchPolicy(
