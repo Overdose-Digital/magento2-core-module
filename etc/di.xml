@@ -6,4 +6,25 @@
     <type name="Magento\Csp\Model\Collector\CspWhitelistXmlCollector">
         <plugin name="od_csp_whitelist_collector" type="Overdose\Core\Plugin\Csp\Model\Collector\CspWhitelistXmlCollectorPlugin"/>
     </type>
+    <type name="Magento\Framework\File\Uploader">
+        <plugin name="od_upload_svg_admin" type="Overdose\Core\Plugin\File\SvgUploaderPlugin" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
+        <arguments>
+            <argument name="extensions" xsi:type="array">
+                <item name="allowed" xsi:type="array">
+                    <item name="svg" xsi:type="string">image/svg+xml</item>
+                </item>
+                <item name="image_allowed" xsi:type="array">
+                    <item name="svg" xsi:type="string">image/svg+xml</item>
+                </item>
+                <item name="media_allowed" xsi:type="array">
+                    <item name="svg" xsi:type="string">image/svg+xml</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\MediaStorage\Model\File\Validator\NotProtectedExtension">
+        <plugin type="Overdose\Core\Plugin\Model\File\Validator\NotProtectedExtensionPlugin" sortOrder="20" name="od_upload_svd_admin_remove_from_protected_extension"/>
+    </type>
 </config>

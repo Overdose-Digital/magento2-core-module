@@ -21,5 +21,10 @@
                 </storefront>
             </policies>
         </csp>
+        <od_general_config>
+                <od_svg>
+                <enabled>1</enabled>
+            </od_svg>
+        </od_general_config>
     </default>
 </config>
