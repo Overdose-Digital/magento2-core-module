@@ -25,12 +25,15 @@
         </arguments>
     </type>
     <type name="Magento\MediaStorage\Model\File\Validator\NotProtectedExtension">
-        <plugin name="od_upload_svd_admin_remove_from_protected_extension" type="Overdose\Core\Plugin\Model\File\Validator\NotProtectedExtensionPlugin" sortOrder="10" disabled="false"/>
+        <plugin name="od_remove_svg_from_protected_extensions" type="Overdose\Core\Plugin\Model\File\Validator\NotProtectedExtensionPlugin" sortOrder="10" disabled="false"/>
     </type>
     <type name="Magento\Theme\Model\Design\Backend\Favicon">
         <plugin name="od_allow_svg_for_favicno" type="Overdose\Core\Plugin\Filesystem\FaviconPlugin" sortOrder="10" disabled="false"/>
     </type>
     <type name="Magento\Theme\Model\Design\Backend\Logo">
         <plugin name="od_allow_svg_for_logo" type="Overdose\Core\Plugin\Model\Design\Backend\LogoPlugin" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
+        <plugin name="od_skip_svg_image_resize_and_thumbnail" type="Overdose\Core\Plugin\Model\Wysiwyg\Images\StoragePlugin" sortOrder="10" disabled="false"/>
     </type>
 </config>
