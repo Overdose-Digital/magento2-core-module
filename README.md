@@ -1,6 +1,7 @@
 # Overdose Core module M2
 Module "for other OD modules".  
 Creates config tab and contain couple geatures.
+Allows to upload svg image for all areas of admin except of watermark image.
 
 ## Install instructions:
   - If NOT packagist: `composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git`
@@ -70,4 +71,3 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `admin_notification/email/receiver`. Admin Notification Receiver email.
 - `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field. Default: NZ VPN.
 - `od_csp/custom_policy/rules`. Custom rules for Magento_CSP.
-

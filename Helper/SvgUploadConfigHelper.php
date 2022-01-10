@@ -4,28 +4,32 @@ declare(strict_types=1);
 
 namespace Overdose\Core\Helper;
 
-use Magento\Framework\App\Config\ScopeConfigInterface;
-
 /**
  * Svg image upload admin configuration provider
  */
 class SvgUploadConfigHelper
 {
-    const XML_SVG_UPLOAD_ENABLED = 'od_general_config/od_svg/enabled';
-
-    /** @var ScopeConfigInterface */
-    private  $scopeConfig;
-
-    public function __construct(
-        ScopeConfigInterface $scopeConfig
-    ) {
-        $this->scopeConfig = $scopeConfig;
-    }
-
     /**
+     * @param $filePath
      * @return bool
      */
-    public function isUploadSvgConfigEnabled(): bool {
-        return $this->scopeConfig->isSetFlag(self::XML_SVG_UPLOAD_ENABLED);
+    public function isSvgImage($filePath): bool
+    {
+        $fileInfo = pathinfo($filePath);
+        $extension = isset($fileInfo['extension']) ? $fileInfo['extension'] : null;
+
+        if (!$extension && file_exists($filePath)) {
+            $mimeType = mime_content_type($filePath);
+            $extension = str_replace('image/', '', $mimeType);
+            if ($extension == 'svg' || $extension == 'svg+xml') {
+                return true;
+            }
+            return false;
+        }
+
+        if ($extension == 'svg') {
+            return true;
+        }
+        return false;
     }
 }

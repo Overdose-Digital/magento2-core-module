@@ -14,13 +14,6 @@
                     <label>Google maps</label>
                 </field>
             </group>
-            <group id="od_svg" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>SVG Upload</label>
-                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
-                    <label>Enable/Disable SVG Upload From Admin</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-            </group>
         </section>
         <section id="admin_notification" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
             <resource>Overdose_Core::config</resource>

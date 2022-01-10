@@ -34,17 +34,15 @@ class StoragePlugin
         \Closure $proceed,
         ...$args
     ) {
-        if (!$this->svgUploadConfigHelper->isUploadSvgConfigEnabled()) {
-            return $proceed($args);
-        }
-
         $source = isset($args[0]) ? $args[0] : null;
         if (!$source) {
             return $proceed($args);
         }
 
-        $pathInfo = pathinfo($source);
-        if ($pathInfo['extension'] == 'svg') {
+        /**
+         * Skip resize for 'svg' image type.
+         */
+        if ($this->svgUploadConfigHelper->isSvgImage($source)) {
             return false;
         }
 
@@ -62,20 +60,17 @@ class StoragePlugin
         \Closure $proceed,
         ...$args
     ) {
-        if (!$this->svgUploadConfigHelper->isUploadSvgConfigEnabled()) {
-            return $proceed($args);
-        }
-
         $filePath = isset($args[0]) ? $args[0] : null;
         if (!$filePath) {
             return $proceed($args);
         }
 
-        $fileInfo = pathinfo($filePath);
-        if ($fileInfo['extension'] == 'svg') {
+        /**
+         * If image type is 'svg' return original file path.
+         */
+        if ($this->svgUploadConfigHelper->isSvgImage($filePath)) {
             return $filePath;
         }
-
         return $proceed($args);
     }
 }

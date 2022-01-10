@@ -36,4 +36,11 @@
     <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
         <plugin name="od_skip_svg_image_resize_and_thumbnail" type="Overdose\Core\Plugin\Model\Wysiwyg\Images\StoragePlugin" sortOrder="10" disabled="false"/>
     </type>
+    <type name="Magento\Framework\Image\Adapter\Gd2">
+        <plugin name="od_skip_svg_file_validation" type="Overdose\Core\Plugin\Image\Adapter\Gd2Plugin" disabled="false" sortOrder="10"/>
+    </type>
+    <type name="Magento\MediaStorage\App\Media">
+        <plugin name="od_fe_catalog_svg_img" type="Overdose\Core\Plugin\App\MediaPlugin" />
+    </type>
+    <preference for="Magento\MediaStorage\Service\ImageResize" type="Overdose\Core\Service\ImageResize"/>
 </config>
