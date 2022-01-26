@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Overdose\Core\Plugin\Model\Wysiwyg\Images;
+namespace Overdose\Core\Plugin\Cms\Model\Wysiwyg\Images;
 
 use Overdose\Core\Helper\SvgUploadConfigHelper;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Overdose\Core\Plugin\Filesystem;
+namespace Overdose\Core\Plugin\Theme\Filesystem;
 
 /**
  * Add 'svg' into allowed extensions.

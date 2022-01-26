@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Overdose\Core\Plugin\File;
+namespace Overdose\Core\Plugin\Framework\File;
 
 /**
  * Add svg extension for the file upload
@@ -25,14 +25,18 @@ class SvgUploaderPlugin
         return [$validTypes];
     }
 
-    public function aroundSetAllowedExtensions(
+    /**
+     * @param \Magento\Framework\File\Uploader $subject
+     * @param array $extensions
+     * @return array|array[]
+     */
+    public function beforeSetAllowedExtensions(
         \Magento\Framework\File\Uploader $subject,
-        \Closure $proceed,
         $extensions = []
     ) {
         if (!in_array('svg', $extensions)) {
             $extensions[] = 'svg';
         }
-        return $proceed($extensions);
+        return [$extensions];
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Overdose\Core\Plugin\Image\Adapter;
+namespace Overdose\Core\Plugin\Framework\Image\Adapter;
 
 use Overdose\Core\Helper\SvgUploadConfigHelper;
 

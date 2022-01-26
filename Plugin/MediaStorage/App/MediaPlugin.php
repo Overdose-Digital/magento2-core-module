@@ -1,12 +1,11 @@
 <?php
 
-namespace Overdose\Core\Plugin\App;
+namespace Overdose\Core\Plugin\MediaStorage\App;
 
 use Magento\Catalog\Model\Product\Media\ConfigInterface as MediaConfig;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\App\Request\Http;
 use Magento\Framework\Filesystem;
-use Magento\Framework\Filesystem\Directory\WriteInterface;
 use Magento\MediaStorage\App\Media;
 use Overdose\Core\Helper\SvgUploadConfigHelper;
 use Psr\Log\LoggerInterface;
@@ -29,10 +28,10 @@ class MediaPlugin
     /** @var LoggerInterface */
     private $logger;
 
-    /** @var WriteInterface */
+    /** @var \Magento\Framework\Filesystem\Directory\WriteInterface */
     private $directoryPub;
 
-    /** @var WriteInterface */
+    /** @var \Magento\Framework\Filesystem\Directory\WriteInterface */
     private $directoryMedia;
 
     /**

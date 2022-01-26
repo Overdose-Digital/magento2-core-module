@@ -1,12 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# Unreleased
+- Need to work on allow to upload svg image for watermark.
+
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.4.0] - 10-01-2021
 - Allow to upload 'svg' image for admin cms pages and blocks, products, page builder, favicon, logo, category page.
-- TODO:: Need to work on allow to upload svg image for watermark.
 - Please DO NOT upload watermark svg image at admin > content > design > configuration > theme edit > Product Image Watermarks.
 
 ## [1.3.3] - 02-12-2021

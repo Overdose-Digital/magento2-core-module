@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Overdose\Core\Plugin\Model\File\Validator;
+namespace Overdose\Core\Plugin\MediaStorage\Model\File\Validator;
 
 /**
  * Remove 'svg' from protected file extensions
