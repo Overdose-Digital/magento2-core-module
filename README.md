@@ -45,7 +45,7 @@ This function allows implementing email notifications send in any part of custom
 
 Admin configuration: Stores > Configuration > Overdose > Admin Notification > Email Notification
 ![Admin Notification](https://i.imgur.com/pYsNe4O.png "Admin notification configuration")
-To use module functionality need to add `Overdose\AdminNotification\Model\Email\Sender` class and execute `send()` method.  
+To use module functionality need to add `Overdose\Core\Model\Email\Sender` class and execute `send()` method.  
 Example:
 
     $sender->send([
