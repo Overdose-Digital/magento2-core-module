@@ -70,4 +70,7 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `admin_notification/email/receiver`. Admin Notification Receiver email.
 - `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field. Default: NZ VPN.
 - `od_csp/custom_policy/rules`. Custom rules for Magento_CSP.
+- `environment/general/header_title_prefix`. Custom prefix for Admin Pages TItles.
+- `environment/general/header_background`. Custom css background for Admin Header.
+- `environment/general/header_text_colour`. Custom css text colour for Admin Header.
 
