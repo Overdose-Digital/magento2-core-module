@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Overdose\Core\Plugin\Framework\View;
 
+use Magento\Framework\Escaper;
 use Magento\Framework\View\Layout;
 use Magento\Framework\View\Layout\Element;
 use Overdose\Core\Model\Config\EnvironmentConfig;
@@ -10,16 +11,24 @@ use Overdose\Core\Model\Config\EnvironmentConfig;
 class LayoutPlugin
 {
     /**
+     * @var Escaper
+     */
+    private Escaper $escaper;
+
+    /**
      * @var EnvironmentConfig
      */
     private EnvironmentConfig $environmentConfig;
 
     /**
+     * @param Escaper $escaper
      * @param EnvironmentConfig $environmentConfig
      */
     public function __construct(
+        Escaper $escaper,
         EnvironmentConfig $environmentConfig
     ) {
+        $this->escaper = $escaper;
         $this->environmentConfig = $environmentConfig;
     }
 
@@ -35,7 +44,7 @@ class LayoutPlugin
             return $html;
         }
 
-        $cssBackground = $this->environmentConfig->getHeaderBackground();
+        $cssBackground = $this->escaper->escapeHtml($this->environmentConfig->getHeaderBackground());
 
         if (!$cssBackground) {
             return $html;
