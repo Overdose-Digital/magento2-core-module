@@ -10,7 +10,7 @@ class EnvironmentConfig
     /**
      * @var ScopeConfigInterface
      */
-    private ScopeConfigInterface $scopeConfig;
+    private $scopeConfig;
 
     /**
      * @param ScopeConfigInterface $scopeConfig
