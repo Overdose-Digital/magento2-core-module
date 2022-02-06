@@ -11,7 +11,7 @@ class EnvironmentStoreConfig implements ArgumentInterface
     /**
      * @var EnvironmentConfig
      */
-    private EnvironmentConfig $environmentConfig;
+    private $environmentConfig;
 
     /**
      * @param EnvironmentConfig $environmentConfig

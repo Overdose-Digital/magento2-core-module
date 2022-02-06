@@ -64,8 +64,9 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `Directives` field : multiselect for pick up proper restriction directives per URL
 
 ### Environment header
+![Default](https://i.imgur.com/NOUnj9W.png "Environment header")
 
-`environment` configurations don't have configs in admin area to prevent copy them during "update staging from production".  
+`environment` configurations don't have configs in admin area. This was done on purpose in order to prevent copy them during "update staging from production" process.  
 You need:
 - For Cloud: set variables from Cloud admin (f.e. `env:CONFIG__DEFAULT__ENVIRONMENT__GENERAL__HEADER_TITLE_PREFIX`)
 - For Hoopla: edit `app/etc/env.php` file:
