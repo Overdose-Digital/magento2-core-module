@@ -63,6 +63,40 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `Source Url` field : to add URL, comma separated or from new line if same directives will be using for few sources.
 - `Directives` field : multiselect for pick up proper restriction directives per URL
 
+### Environment header
+![Default](https://i.imgur.com/NOUnj9W.png "Environment header")
+
+`environment` configurations don't have configs in admin area. This was done on purpose in order to prevent copy them during "update staging from production" process.  
+You need:  
+- For Cloud: set variables from Cloud admin (f.e. `env:CONFIG__DEFAULT__ENVIRONMENT__GENERAL__HEADER_TITLE_PREFIX`)  
+- For Hoopla: edit `app/etc/env.php` file:  
+```
+    'system' => [
+        'default' => [
+            'environment' => [
+                'general' => [
+                    'header_title_prefix' => 'Production',
+                    'header_background' => 'red',
+                    'header_text_colour' => 'yellow'
+                ]
+            ]
+        ]
+    ]
+```
+
+**General rules**  
+For Production set:
+
+- `prefix`: Production
+- `background`: "red" or similar
+
+For Staging set:
+
+- `prefix`: Staging
+- `background`: "green" or similar
+
+
+
 ## Configurations
 - `od_general_config/api_keys/google_maps`. Google Maps API key for global usage.
 - `admin_notification/email/identity`. Admin Notification sender email.
@@ -70,4 +104,7 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `admin_notification/email/receiver`. Admin Notification Receiver email.
 - `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field. Default: NZ VPN.
 - `od_csp/custom_policy/rules`. Custom rules for Magento_CSP.
+- `environment/general/header_title_prefix`. Custom prefix for Admin Pages TItles. Default: `local`.
+- `environment/general/header_background`. Custom css background for Admin Header. Default: `yellow`.
+- `environment/general/header_text_colour`. Custom css text colour for Admin Header. Default: `blue`.
 
