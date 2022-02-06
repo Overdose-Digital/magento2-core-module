@@ -12,12 +12,12 @@ class PageTitlePlugin
     /**
      * @var Escaper
      */
-    private Escaper $escaper;
+    private $escaper;
 
     /**
      * @var EnvironmentConfig
      */
-    private EnvironmentConfig $environmentConfig;
+    private $environmentConfig;
 
     /**
      * @param Escaper $escaper
