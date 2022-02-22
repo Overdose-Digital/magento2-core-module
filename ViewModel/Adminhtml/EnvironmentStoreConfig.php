@@ -29,4 +29,12 @@ class EnvironmentStoreConfig implements ArgumentInterface
     {
         return $this->environmentConfig->getHeaderTextColour();
     }
+
+    /**
+     * @return string
+     */
+    public function getEnvironmentCssBackgroundColour(): string
+    {
+        return $this->environmentConfig->getHeaderBackground();
+    }
 }
