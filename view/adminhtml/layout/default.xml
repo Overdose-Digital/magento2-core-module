@@ -6,5 +6,10 @@
                 <argument name="adminhtml_store_config_view_model" xsi:type="object">Overdose\Core\ViewModel\Adminhtml\EnvironmentStoreConfig</argument>
             </arguments>
         </referenceBlock>
+        <referenceBlock name="page.actions.toolbar" template="Overdose_Core::pageactions.phtml">
+            <arguments>
+                <argument name="adminhtml_store_config_view_model" xsi:type="object">Overdose\Core\ViewModel\Adminhtml\EnvironmentStoreConfig</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>

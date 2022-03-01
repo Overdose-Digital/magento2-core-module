@@ -9,7 +9,7 @@
         <environment>
             <general>
                 <header_title_prefix>local</header_title_prefix>
-                <header_background>yellow</header_background>
+                <header_background>#fdf684</header_background>
                 <header_text_colour>blue</header_text_colour>
             </general>
         </environment>
