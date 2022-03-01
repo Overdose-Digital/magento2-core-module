@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.4.1] - 22-02-2022
 ### Added
-- Add ability to style an admin sticky header per environment via configs.
+- Show "env labels" in sticky header.
 
 ## [1.4.0] - 04-02-2022
 ### Added
