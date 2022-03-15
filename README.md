@@ -108,3 +108,7 @@ For Staging set:
 - `environment/general/header_background`. Custom css background for Admin Header. Default: `yellow`.
 - `environment/general/header_text_colour`. Custom css text colour for Admin Header. Default: `blue`.
 
+## Support
+Magento 2.2 | Magento 2.3 | Magento 2.4
+:---: | :---: | :---:
+? | 1.3.3 | ok
