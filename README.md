@@ -63,6 +63,14 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `Source Url` field : to add URL, comma separated or from new line if same directives will be using for few sources.
 - `Directives` field : multiselect for pick up proper restriction directives per URL
 
+## Configurations
+- `od_general_config/api_keys/google_maps`. Google Maps API key for global usage.
+- `admin_notification/email/identity`. Admin Notification sender email.
+- `admin_notification/email/template`. Admin Notification email template.
+- `admin_notification/email/receiver`. Admin Notification Receiver email.
+- `payment/checkmo/allowed_ips`: Appears if CMO status NO. Listed client IPs would see CMO on checkout. Configuration -> Sales -> Payment Methods -> Check / Money Order section -> 'Enable payment for IPs' field. Default: NZ VPN.
+- `od_csp/custom_policy/rules`. Custom rules for Magento_CSP.
+
 ## Support
 Magento 2.2 | Magento 2.3 | Magento 2.4
 :---: | :---: | :---:
