@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Overdose\Core\Block\Adminhtml\Csp\Form\Field;
 
 use Magento\Framework\View\Element\Html\Select;
+use Magento\Csp\Model\Policy\FetchPolicy;
 
 /**
  * Class Directives
@@ -27,17 +28,12 @@ class Directives extends Select
      */
     private function getDirectivesArray(): array
     {
-        return [
-            ['label' => 'default-src', 'value' => 'default-src'],
-            ['label' => 'script-src', 'value' => 'script-src'],
-            ['label' => 'object-src', 'value' => 'object-src'],
-            ['label' => 'style-src', 'value' => 'style-src'],
-            ['label' => 'img-src', 'value' => 'img-src'],
-            ['label' => 'media-src', 'value' => 'media-src'],
-            ['label' => 'frame-src', 'value' => 'frame-src'],
-            ['label' => 'font-src', 'value' => 'font-src'],
-            ['label' => 'connect-src', 'value' => 'connect-src']
-        ];
+        $directives = [];
+        foreach (FetchPolicy::POLICIES as $policy) {
+            $directives[] = ['label' => $policy, 'value' => $policy];
+        }
+
+        return $directives;
     }
 
     /**
