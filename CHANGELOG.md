@@ -7,9 +7,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.4.0] - 10-01-2021
+
+## [1.5.0] - 16-04-2022
 - Allow to upload 'svg' image for admin cms pages and blocks, products, page builder, favicon, logo, category page.
 - Please DO NOT upload watermark svg image at admin > content > design > configuration > theme edit > Product Image Watermarks.
+
+## [1.4.2] - 06-04-2022
+### Added
+- Update list of Custom CSP
+
+## [1.4.1] - 22-02-2022
+### Added
+- Show "env labels" in sticky header.
+
+## [1.4.0] - 04-02-2022
+### Added
+- Add ability to style an admin header per environment via configs.
 
 ## [1.3.3] - 02-12-2021
 ### Changed

@@ -6,6 +6,13 @@
                 <allowed_ips>103.87.121.19</allowed_ips>
             </checkmo>
         </payment>
+        <environment>
+            <general>
+                <header_title_prefix>local</header_title_prefix>
+                <header_background>#fdf684</header_background>
+                <header_text_colour>blue</header_text_colour>
+            </general>
+        </environment>
         <admin_notification>
             <email>
                 <identity>general</identity>
