@@ -26,14 +26,15 @@ class StoragePlugin
     /**
      * @param \Magento\Cms\Model\Wysiwyg\Images\Storage $subject
      * @param \Closure $proceed
-     * @param $source
+     * @param string $source
      * @param bool $keepRatio
      * @return false|mixed
      */
     public function aroundResizeFile(
         \Magento\Cms\Model\Wysiwyg\Images\Storage $subject,
         \Closure $proceed,
-        $source, $keepRatio = true
+        $source,
+        $keepRatio = true
     ) {
         if (!$source) {
             return $proceed($source, $keepRatio);
@@ -52,16 +53,16 @@ class StoragePlugin
     /**
      * @param \Magento\Cms\Model\Wysiwyg\Images\Storage $subject
      * @param \Closure $proceed
-     * @param $filePath
+     * @param string $filePath
      * @param bool $checkFile
      * @return mixed
      */
     public function aroundGetThumbnailPath(
         \Magento\Cms\Model\Wysiwyg\Images\Storage $subject,
         \Closure $proceed,
-        $filePath, $checkFile = false
+        $filePath,
+        $checkFile = false
     ) {
-        $filePath = isset($args[0]) ? $args[0] : null;
         if (!$filePath) {
             return $proceed($filePath, $checkFile);
         }
