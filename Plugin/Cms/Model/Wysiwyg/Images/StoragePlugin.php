@@ -26,17 +26,18 @@ class StoragePlugin
     /**
      * @param \Magento\Cms\Model\Wysiwyg\Images\Storage $subject
      * @param \Closure $proceed
-     * @param ...$args
+     * @param string $source
+     * @param bool $keepRatio
      * @return false|mixed
      */
     public function aroundResizeFile(
         \Magento\Cms\Model\Wysiwyg\Images\Storage $subject,
         \Closure $proceed,
-        ...$args
+        $source,
+        $keepRatio = true
     ) {
-        $source = isset($args[0]) ? $args[0] : null;
         if (!$source) {
-            return $proceed($args);
+            return $proceed($source, $keepRatio);
         }
 
         /**
@@ -46,23 +47,24 @@ class StoragePlugin
             return false;
         }
 
-        return $proceed($args);
+        return $proceed($source, $keepRatio);
     }
 
     /**
      * @param \Magento\Cms\Model\Wysiwyg\Images\Storage $subject
      * @param \Closure $proceed
-     * @param ...$args
+     * @param string $filePath
+     * @param bool $checkFile
      * @return mixed
      */
     public function aroundGetThumbnailPath(
         \Magento\Cms\Model\Wysiwyg\Images\Storage $subject,
         \Closure $proceed,
-        ...$args
+        $filePath,
+        $checkFile = false
     ) {
-        $filePath = isset($args[0]) ? $args[0] : null;
         if (!$filePath) {
-            return $proceed($args);
+            return $proceed($filePath, $checkFile);
         }
 
         /**
@@ -71,6 +73,6 @@ class StoragePlugin
         if ($this->svgUploadConfigHelper->isSvgImage($filePath)) {
             return $filePath;
         }
-        return $proceed($args);
+        return $proceed($filePath, $checkFile);
     }
 }
