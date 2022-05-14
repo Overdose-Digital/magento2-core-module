@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.1] - 16-04-2022
+- Fix error linked with wrong declaration of Overdose\Core\Service\ImageResize::resizeFromThemes
 
 ## [1.5.0] - 16-04-2022
 - Allow to upload 'svg' image for admin cms pages and blocks, products, page builder, favicon, logo, category page.

@@ -155,10 +155,11 @@ class ImageResize extends \Magento\MediaStorage\Service\ImageResize
 
     /**
      * @param array|null $themes
+     * @param bool $skipHiddenImages
      * @return Generator
      * @throws NotFoundException
      */
-    public function resizeFromThemes(array $themes = null): Generator
+    public function resizeFromThemes(array $themes = null, bool $skipHiddenImages = false): Generator
     {
         $count = $this->productImage->getCountUsedProductImages();
         if (!$count) {
