@@ -1,4 +1,4 @@
-# Overdose Core module M2
+# Overdose Core module M2 
 Module "for other OD modules".  
 Creates config tab and contain couple geatures.
 Allows to upload svg image for all areas of admin except of watermark image.
@@ -33,6 +33,10 @@ Example:
 ```
 ![Example](https://i.imgur.com/WTmJE00.png "Logo Title Text 1")
 
+### One place for global APi keys
+
+Use one config for all modules.
+
 ### Check/Money Order allowed IPs
 In order to use CMO in test purposes when it's disabled
 
@@ -57,12 +61,14 @@ Example:
 The default email template is `app/code/Overdose/Core/view/frontend/email/admin_notification.html`, it can be modified if needed.
 
 ### Content Security Policy Management
-**Purpose: To cover W3C CSP recommendation**  
+Purpose: To cover W3C CSP recommendation  
 In order to add some sources to Content-Security-Policy / Content-Security-Policy-Report-Only header:
 
 - `Stores > Settings > Configuration > Security > Content Security Policy > Custom CSP` section.
 - `Source Url` field : to add URL, comma separated or from new line if same directives will be using for few sources.
 - `Directives` field : multiselect for pick up proper restriction directives per URL
+
+![CSP](https://i.imgur.com/REbdfwc.png "Content Security Policy Management")
 
 ### Environment header
 ![Default](https://i.imgur.com/NOUnj9W.png "Environment header")
