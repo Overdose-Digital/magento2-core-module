@@ -6,41 +6,4 @@
     <type name="Magento\Csp\Model\Collector\CspWhitelistXmlCollector">
         <plugin name="od_csp_whitelist_collector" type="Overdose\Core\Plugin\Csp\Model\Collector\CspWhitelistXmlCollectorPlugin"/>
     </type>
-    <type name="Magento\Framework\File\Uploader">
-        <plugin name="od_upload_svg_admin" type="Overdose\Core\Plugin\Framework\File\SvgUploaderPlugin" sortOrder="10"/>
-    </type>
-    <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
-        <arguments>
-            <argument name="extensions" xsi:type="array">
-                <item name="allowed" xsi:type="array">
-                    <item name="svg" xsi:type="string">image/svg+xml</item>
-                </item>
-                <item name="image_allowed" xsi:type="array">
-                    <item name="svg" xsi:type="string">image/svg+xml</item>
-                </item>
-                <item name="media_allowed" xsi:type="array">
-                    <item name="svg" xsi:type="string">image/svg+xml</item>
-                </item>
-            </argument>
-        </arguments>
-    </type>
-    <type name="Magento\MediaStorage\Model\File\Validator\NotProtectedExtension">
-        <plugin name="od_remove_svg_from_protected_extensions" type="Overdose\Core\Plugin\MediaStorage\Model\File\Validator\NotProtectedExtensionPlugin" sortOrder="10"/>
-    </type>
-    <type name="Magento\Theme\Model\Design\Backend\Favicon">
-        <plugin name="od_allow_svg_for_favicno" type="Overdose\Core\Plugin\Theme\Filesystem\FaviconPlugin" sortOrder="10"/>
-    </type>
-    <type name="Magento\Theme\Model\Design\Backend\Logo">
-        <plugin name="od_allow_svg_for_logo" type="Overdose\Core\Plugin\Theme\Model\Design\Backend\LogoPlugin" sortOrder="10"/>
-    </type>
-    <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
-        <plugin name="od_skip_svg_image_resize_and_thumbnail" type="Overdose\Core\Plugin\Cms\Model\Wysiwyg\Images\StoragePlugin" sortOrder="10"/>
-    </type>
-    <type name="Magento\Framework\Image\Adapter\Gd2">
-        <plugin name="od_skip_svg_file_validation" type="Overdose\Core\Plugin\Framework\Image\Adapter\Gd2Plugin" sortOrder="10"/>
-    </type>
-    <type name="Magento\MediaStorage\App\Media">
-        <plugin name="od_fe_catalog_svg_img" type="Overdose\Core\Plugin\MediaStorage\App\MediaPlugin" />
-    </type>
-    <preference for="Magento\MediaStorage\Service\ImageResize" type="Overdose\Core\Service\ImageResize"/>
 </config>
