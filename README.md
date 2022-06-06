@@ -1,8 +1,6 @@
 # Overdose Core module M2 
 Module "for other OD modules".  
 Creates config tab and contain couple features.
-Allows to upload svg image for all areas of admin except of watermark image.
-Allows to clear Fastly cache via console command.
 
 ## Install instructions:
   - If NOT packagist: `composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git`
@@ -103,9 +101,6 @@ For Staging set:
 - `prefix`: Staging
 - `background`: "green" or similar
 
-### SVG support
-DO NOT upload watermark svg.
-
 ### Console commands
 - `bin/magento core:clear-fastly`: clear Fastly cache
 
@@ -121,7 +116,7 @@ DO NOT upload watermark svg.
 - `environment/general/header_text_colour`. Custom css text colour for Admin Header. Default: `blue`.
 
 ## Support
-Magento 2.2 | Magento 2.3 | Magento 2.4
-:---: | :---: | :---:
-? | 1.3.3 | ok
+| Magento 2.2 | Magento 2.3 | Magento 2.4 |
+|:-----------:|:-----------:|:-----------:|
+|      ?      |    1.3.3    |     ok      |
 
