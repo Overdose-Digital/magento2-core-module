@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 02-08-2022
+### Removed
+- Removed feature "mark admin header per environment". Use separate module "Safe Production".
+
 ## [1.6.0] - 06-06-2022
 ### Added
 - Add ability to clear Fastly cache via console command(`bin/magento core:clear-fastly`).
@@ -11,9 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed SVG supporting, move to separate module https://bitbucket.org/overdosedigital/module-magento-svg-support
 
 ## [1.5.2] - 14-05-2022
+### Fixed
 - Fix error when trying to upload images on Admin Panel (`Plugin/Cms/Model/Wysiwyg/Images/StoragePlugin.php`)
 
 ## [1.5.1] - 16-04-2022
+### Fixed
 - Fix error linked with wrong declaration of Overdose\Core\Service\ImageResize::resizeFromThemes
 
 ## [1.5.0] - 16-04-2022
