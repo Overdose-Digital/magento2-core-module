@@ -1,6 +1,6 @@
-# Overdose Core module M2
+# Overdose Core module M2 
 Module "for other OD modules".  
-Creates config tab and contain couple geatures.
+Creates config tab and contain couple features.
 
 ## Install instructions:
   - If NOT packagist: `composer config repositories.overdose/module-core-repo vcs git@bitbucket.org:overdosedigital/modules-core.git`
@@ -32,6 +32,10 @@ Example:
 ```
 ![Example](https://i.imgur.com/WTmJE00.png "Logo Title Text 1")
 
+### One place for global APi keys
+
+Use one config for all modules.
+
 ### Check/Money Order allowed IPs
 In order to use CMO in test purposes when it's disabled
 
@@ -56,12 +60,17 @@ Example:
 The default email template is `app/code/Overdose/Core/view/frontend/email/admin_notification.html`, it can be modified if needed.
 
 ### Content Security Policy Management
-**Purpose: To cover W3C CSP recommendation**  
+Purpose: To cover W3C CSP recommendation  
 In order to add some sources to Content-Security-Policy / Content-Security-Policy-Report-Only header:
 
 - `Stores > Settings > Configuration > Security > Content Security Policy > Custom CSP` section.
 - `Source Url` field : to add URL, comma separated or from new line if same directives will be using for few sources.
 - `Directives` field : multiselect for pick up proper restriction directives per URL
+
+![CSP](https://i.imgur.com/REbdfwc.png "Content Security Policy Management")
+
+### Console commands
+- `bin/magento core:clear-fastly`: clear Fastly cache
 
 ## Configurations
 - `od_general_config/api_keys/google_maps`. Google Maps API key for global usage.
@@ -72,6 +81,7 @@ In order to add some sources to Content-Security-Policy / Content-Security-Polic
 - `od_csp/custom_policy/rules`. Custom rules for Magento_CSP.
 
 ## Support
-Magento 2.2 | Magento 2.3 | Magento 2.4
-:---: | :---: | :---:
-? | 1.3.3 | ok
+| Magento 2.2 | Magento 2.3 | Magento 2.4 |
+|:-----------:|:-----------:|:-----------:|
+|      ?      |    1.3.3    |     ok      |
+
